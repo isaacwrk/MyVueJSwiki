@@ -1,0 +1,26 @@
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<div id="app">
+    <!--vai interpolar uma unica vez com v-once-->
+    <p v-once>{{titulo}}</p>
+    <p>{{saudacao()}}</p>
+    <a v-bind:href="link">Google</a>
+    <hr>
+    <!--executa um html puro, não tem necessidade do doublemustache-->
+    <p v-html="linkHtml"></p>
+</div>
+
+<script>
+    new Vue({
+        el:'#app',
+        data:{
+            titulo:'Hello Vue.js',
+            link:"http://www.google.com.br",
+            linkHtml:'<a href="https://wwww.google.com.br">Google</a>'
+        },
+        methods: {
+            saudacao: function(){
+                return this.titulo = 'Bom dia!!'
+            }
+        },
+    })
+</script>
