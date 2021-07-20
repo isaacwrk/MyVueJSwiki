@@ -1,0 +1,35 @@
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<div id="app">
+    <p>{{contador}}</p>
+    <!--v-on escuta eventos-->
+    <!--agora fazemos o somar por 5 e o $event é uma palavra reservada para exibir o evento no log-->
+    <button v-on:click="somar(5, $event)">somar1</button>
+    <!--esse evento ativa quando o mouse é passado encima do paragráfo-->
+    <p v-on:mousemove="atualizarXY">Mouse: {{x}} e {{y}}
+        <span v-on:mousemove.stop="">PARAR AQUI</span>
+    </p>
+</div>
+
+<script>
+    new Vue({
+        el:'#app',
+        data:{
+            contador:0,
+            x:0,
+            y:0
+        },
+        methods: {
+            somar(passo, event){
+                this.contador += passo
+            },
+            atualizarXY(event){
+                this.x=event.clientX,
+                this.y=event.clientY
+            },
+            //mousemove.stop tem o mesmo efeito que criar o method e chamar no span
+            // parar(event){
+            //     event.stopPropagation();
+            // }
+        }
+    })
+</script>
