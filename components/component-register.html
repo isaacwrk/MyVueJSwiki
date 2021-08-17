@@ -1,0 +1,45 @@
+<meta charset="UTF-8">
+<script src="https://unpkg.com/vue"></script>
+<!--Invocando nossos componentes pelo id da instâcia-->
+<div id="app1">
+<contador1></contador1>
+</div>
+<hr>
+<div id="app2">
+    <app-contador2></app-contador2>
+</div>
+
+<script>
+    //Criação do componente, importante manter todo seu componente dentro da tag template
+    const contador = {
+        template:`
+        <div style="text-align:center">
+        <h1>Contador Component</h1>
+            <span>{{ contador }}</span>
+            <button @click="contador++">+</button>
+            <button @click="contador--">-</button>
+        </div>
+        `,
+        data(){
+            return{
+                contador: 0
+            }
+        }
+    }
+    //instanciando nosso componente dentro de uma variável na instância do #app1,logo, chamaremos a variável contador no qual criamos para armazenar o template
+    new Vue({
+        el:"#app1",
+        components:{
+            contador1: contador
+        }
+    })
+    
+    /*Na segunda instância fiz o mesmo processo, caso queira criar um componente no qual o nome do componente tem o nome composto,
+    utilize aspas simples  se não o javascript não reconhecerá*/
+    new Vue({
+        el:"#app2",
+        components:{
+            'app-contador2': contador
+        }
+    })
+</script>
