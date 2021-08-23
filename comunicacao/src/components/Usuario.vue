@@ -5,7 +5,7 @@
         <button @click="alterarNome">Alterar nome</button>
         <hr>
         <div class="componentes">
-            <app-usuario-info  :nome="nome"/>
+            <app-usuario-info :nome="nome"/>
             <app-usuario-editar />
         </div>
     </div>
