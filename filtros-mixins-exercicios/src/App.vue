@@ -2,6 +2,7 @@
 	<div id="app">
 		<h1>Filtros & Mixins</h1>
 		<hr>
+		<p>{{ usuarioLogado }}</p>
 		<p>{{ cpf | cpf }}</p>
 		<input type="text" :value="cpf | cpf ">
 		<hr>
@@ -16,12 +17,17 @@
 	</div>
 </template>
 
-
-
 <script>
+import FrutasMixin from './frutasMixin'
 import Frutas from './Frutas.vue'
+import frutasMixin from './frutasMixin'
+import UsuarioMixin from './usuarioMixin'
+import usuarioMixin from './usuarioMixin'
+
 export default {
-	components:{Frutas},
+	components:{Frutas, FrutasMixin, UsuarioMixin},
+	//Mixins = mistura / merge
+	mixins:[frutasMixin, usuarioMixin],
 	filters:{
 		cpf(valor){
 			const arr = valor.split('')
@@ -34,15 +40,8 @@ export default {
 	data(){
 		return{
 			cpf: '01040005000',
-			fruta:'',
-            frutas:['banana','maça','laranja']
+			frutas:['abacate']
 		}
-	},
-	methods:{
-		add(){
-            this.frutas.push(this.fruta)
-            this.fruta = ''
-        }
 	}
 }
 </script>
