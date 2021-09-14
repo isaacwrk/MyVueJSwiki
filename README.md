@@ -61,7 +61,7 @@ npm run build
 
   
 
-### Run your tests
+### Run your test
 
   
 
