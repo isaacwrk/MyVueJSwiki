@@ -42,7 +42,10 @@ export default {
 			cpf: '01040005000',
 			frutas:['abacate']
 		}
-	}
+	},
+	created(){
+        console.log('Created - App.vue')
+    }
 }
 </script>
 

@@ -8,7 +8,7 @@
 			<b-alert variant="info" show v-if="exibir"> {{msg}} Fade </b-alert>
 		</transition>
 
-		<transition name='slide'>
+		<transition name='slide' type="animation" appear="">
 			<b-alert variant="info" show v-if="exibir"> {{msg}} Slide </b-alert>
 		</transition>
 	</div>
@@ -58,6 +58,10 @@ export default {
 
 .slide-enter-active{
 	animation:slide-in 2s ease;
+}
+
+.slide-leave-active{
+	animation: slide-out 2s ease;
 }
 
 </style>
