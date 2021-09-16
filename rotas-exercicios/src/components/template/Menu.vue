@@ -5,7 +5,7 @@
             <a>Início</a>
             </router-link>
             <router-link to='/usuario' tag="li" active-class="active">
-            <a>usuario</a>
+            <a>Usuário 1</a>
             </router-link>
         </ul>
     </nav>
