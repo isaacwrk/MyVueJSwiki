@@ -9,6 +9,8 @@ Vue.use(Router)
 //config object
 export default new Router({
     //Index router = first route to load when the app starts
+    /*mode: 'history' disable hash --- mode:hash -enable hash*/ 
+    mode:'history',
     routes:[{
         path:'/',
         component:Inicio
