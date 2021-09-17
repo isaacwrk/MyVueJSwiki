@@ -11,13 +11,13 @@ import UsuarioEditar from './components/usuario/UsuarioEditar'
 Vue.use(Router)
 
 //config object
-export default new Router({
+const router = new Router({
     //Index router = first route to load when the app starts
     /*mode: 'history' disable hash --- mode:hash -enable hash*/ 
     mode:'history',
     scrollBehavior(to){
         if(to.hash){
-            return {selector:to.hash}
+            return {selector:to}
         }
     },
     routes:[{
@@ -42,3 +42,9 @@ export default new Router({
         redirect:'/'
     }]
 })
+
+router.beforeEach((to,from,next)=>{
+    console.log('antes das rotas -> global')
+    next('/usuario')
+})
+export default router

@@ -6,6 +6,8 @@
     <!-- buscando dados query do usuarioDetalhe.vue-->
     <p><strong>Completo:</strong>{{ $route.query.completo ? 'Sim' : 'Não'}}</p>
     <p><strong>Língua:</strong>{{ $route.query.lingua}}</p>
+    <hr>
+    <button primario>Confirmar</button>
     <div id="rodape">
       <h3>Curso Vue</h3>
     </div>
