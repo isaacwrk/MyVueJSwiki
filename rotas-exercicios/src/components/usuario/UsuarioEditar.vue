@@ -6,6 +6,9 @@
     <!-- buscando dados query do usuarioDetalhe.vue-->
     <p><strong>Completo:</strong>{{ $route.query.completo ? 'Sim' : 'Não'}}</p>
     <p><strong>Língua:</strong>{{ $route.query.lingua}}</p>
+    <div id="rodape">
+      <h3>Curso Vue</h3>
+    </div>
   </div>
 </template>
 
@@ -16,5 +19,7 @@ export default {
 </script>
 
 <style>
-
+#rodape{
+  margin-top: 1000px;
+}
 </style>

@@ -15,6 +15,11 @@ export default new Router({
     //Index router = first route to load when the app starts
     /*mode: 'history' disable hash --- mode:hash -enable hash*/ 
     mode:'history',
+    scrollBehavior(to){
+        if(to.hash){
+            return {selector:to.hash}
+        }
+    },
     routes:[{
         name:'inicio',
         path:'/',
