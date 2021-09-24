@@ -31,7 +31,9 @@ export default {
             this.sequencia++
             // eslint-disable-next-line
             // this.$store.state.produtos.push(produto)
-            this.$store.commit('adicionarProduto',produto)
+            setTimeout(()=>{
+                this.$store.commit('adicionarProduto',produto)
+            },1000)
         }
     }
 }
